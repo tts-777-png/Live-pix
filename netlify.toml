@@ -6,6 +6,25 @@
   pretty_urls = true
 
 [[redirects]]
+  # Redirecionamento para a API
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  # Garante que /sucesso aponte para sucesso.html
+  from = "/sucesso"
+  to = "/sucesso.html"
+  status = 200
+
+[[redirects]]
+  # Garante que /analise aponte para analise.html
+  from = "/analise"
+  to = "/analise.html"
+  status = 200
+
+[[redirects]]
+  # Garante que /checkout aponte para checkout.html
+  from = "/checkout"
+  to = "/checkout.html"
   status = 200
