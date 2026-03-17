@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundle = true
+
+[preprocessing]
+  # Esta opção ativa as URLs amigáveis automaticamente no Netlify
+  pretty_urls = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
