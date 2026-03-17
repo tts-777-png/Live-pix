@@ -2,14 +2,14 @@
   publish = "public"
   functions = "netlify/functions"
 
-[functions]
-  node_bundle = true
-
-[preprocessing]
-  # Esta opção ativa as URLs amigáveis automaticamente no Netlify
-  pretty_urls = true
+# Removi o node_bundle = true que causou o erro. 
+# O Netlify moderno já faz o bundle automaticamente.
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[functions]
+  # Se precisar de pacotes específicos, o Netlify vai ler do seu package.json automaticamente.
+  external_node_modules = ["axios"]
