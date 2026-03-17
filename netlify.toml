@@ -6,19 +6,6 @@
   pretty_urls = true
 
 [[redirects]]
-  # Permite que as funções sejam chamadas via /api/
   from = "/api/*"
   to = "/.netlify/functions/:splat"
-  status = 200
-
-[[redirects]]
-  # Garante que /analise funcione sem .html
-  from = "/analise"
-  to = "/analise.html"
-  status = 200
-
-[[redirects]]
-  # Garante que /checkout funcione sem .html
-  from = "/checkout"
-  to = "/checkout.html"
   status = 200

@@ -12,14 +12,14 @@ exports.handler = async (event) => {
 
     try {
         const body = JSON.parse(event.body);
-        const valorOriginal = body.amount || body.valor;
+        const valorOriginal = body.amount;
         const valorCentavos = Math.round(parseFloat(valorOriginal) * 100);
 
-        // Suas credenciais do LivePix (as que você me passou antes)
-        const clientId = "a34dd8b8-e7d4-4828-859f-5eea3e3e5763";
-        const clientSecret = "Vux4LNpuwsy89Dd4yGNcRMVah10EQENMG975yUU3eIrZxnGKNeE+u9l0kpOjNCxyXbRuuqW9IhuhV4QYKuYjIEVVF1ZptxPIFQPO/vzXGp0Jar7/XnRbMJROZtJTY+RzhAq3Aa0f5guS1b6v8fVEK8mNYUHUL4WRqtQctlLKTck";
+        // Suas Credenciais Fornecidas
+        const clientId = "399367e7-0075-487a-8d41-f90b28500e03";
+        const clientSecret = "73GlB87sMDZyZMBTaVX79Zi1uy6OalRubEMU9eH/WFK8Paw4qbMPNEnKG9qEptZSznamUj5pv4AdaDD1XAjqeiNfG+91UmhGoLQfRLXnw58IcJSQvunTYzWscAVKHKrRI1SuNtKmCLYFxOrQgLW7w089V4SjOodBIZhq9Qark24";
 
-        // 1. Obter Token OAuth2 (Obrigatório na v2)
+        // 1. Autenticação OAuth2
         const authResponse = await axios.post(
             'https://oauth.livepix.gg/oauth2/token',
             qs.stringify({
@@ -33,12 +33,12 @@ exports.handler = async (event) => {
 
         const token = authResponse.data.access_token;
 
-        // 2. Criar Pagamento v2
+        // 2. Criação do Pagamento v2
         const response = await axios.post('https://api.livepix.gg/v2/payments', {
             amount: valorCentavos, 
             currency: "BRL",
-            // Ajuste para a URL do seu site na netlify
-            redirectUrl: "https://seu-site.netlify.app/sucesso", 
+            // Ajuste para a URL do seu site real na Netlify para o retorno do cliente
+            redirectUrl: "https://live-pix.netlify.app/sucesso", 
             correlationID: `emprestimo-${Date.now()}`
         }, {
             headers: { 
@@ -47,7 +47,6 @@ exports.handler = async (event) => {
             }
         });
 
-        // Retorna a URL de checkout oficial do LivePix
         return {
             statusCode: 200,
             headers,
@@ -55,11 +54,11 @@ exports.handler = async (event) => {
         };
 
     } catch (error) {
-        console.error("ERRO:", error.response ? error.response.data : error.message);
+        console.error("ERRO LIVEPIX:", error.response ? error.response.data : error.message);
         return { 
             statusCode: 500, 
             headers, 
-            body: JSON.stringify({ error: "Erro na API LivePix", details: error.response ? error.response.data : error.message }) 
+            body: JSON.stringify({ error: "Erro na API", details: error.message }) 
         };
     }
 };

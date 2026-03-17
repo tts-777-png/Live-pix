@@ -1,19 +1,52 @@
-async function carregarPix() {
-    try {
-        const response = await fetch('/api/gerar-pix', {
-            method: 'POST',
-            body: JSON.stringify({ amount: caucao })
-        });
-        const data = await response.json();
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processando Pagamento | LivePix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="text-center">
+        <div class="w-16 h-16 border-4 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <h2 class="text-xl font-bold text-gray-800">Gerando seu PIX de Garantia...</h2>
+        <p class="text-gray-500">Você será redirecionado para o pagamento seguro em instantes.</p>
+    </div>
 
-        if(data.checkoutUrl) {
-            // Em vez de mostrar o QR Code no seu site, 
-            // enviamos o cliente para a página de pagamento segura da LivePix
-            window.location.href = data.checkoutUrl;
-        } else {
-            alert("Erro ao gerar link de pagamento.");
+    <script>
+        async function carregarPix() {
+            // Recupera o valor calculado na index.html
+            const caucao = localStorage.getItem('caucao_amount');
+
+            if (!caucao) {
+                alert("Erro: Dados da simulação não encontrados. Por favor, reinicie o processo.");
+                window.location.href = "/";
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/gerar-pix', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: caucao })
+                });
+                
+                const data = await response.json();
+
+                if(data.checkoutUrl) {
+                    // Redireciona para o checkout oficial da LivePix
+                    window.location.href = data.checkoutUrl;
+                } else {
+                    alert("Erro ao gerar pagamento: " + (data.error || "Tente novamente mais tarde."));
+                }
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                alert("Falha de conexão com o servidor.");
+            }
         }
-    } catch (error) {
-        alert("Falha na conexão.");
-    }
-}
+
+        // Inicia automaticamente ao carregar a página
+        window.onload = carregarPix;
+    </script>
+</body>
+</html>
