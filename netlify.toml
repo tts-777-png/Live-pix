@@ -2,14 +2,13 @@
   publish = "public"
   functions = "netlify/functions"
 
-# Removi o node_bundle = true que causou o erro. 
-# O Netlify moderno já faz o bundle automaticamente.
+# NÃO use o redirecionamento /* para /index.html se você tem várias páginas HTML, 
+# pois isso vai fazer todas as páginas carregarem o index.
+
+[build.processing.html]
+  pretty_urls = true
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-
-[functions]
-  # Se precisar de pacotes específicos, o Netlify vai ler do seu package.json automaticamente.
-  external_node_modules = ["axios"]

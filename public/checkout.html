@@ -1,84 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento da Garantia | LivePix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .text-live { color: #2DD4BF; }
-        .text-pix { color: #3B82F6; }
-    </style>
-</head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+async function carregarPix() {
+    try {
+        const response = await fetch('/api/gerar-pix', {
+            method: 'POST',
+            body: JSON.stringify({ amount: caucao })
+        });
+        const data = await response.json();
 
-    <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 text-center">
-        <div class="text-2xl font-bold mb-6">
-            <span class="text-live">Live</span><span class="text-pix">Pix</span>
-        </div>
-
-        <h2 class="text-xl font-bold text-gray-800 mb-2 text-left">Finalize sua Liberação</h2>
-        <p class="text-gray-500 text-sm mb-6 text-left">Efetue o pagamento do aporte de garantia para liberar o valor de <strong id="val-emprestimo"></strong> na sua conta.</p>
-
-        <div class="bg-gray-100 p-4 rounded-2xl mb-6 inline-block w-full">
-            <div id="loading-pix" class="py-12 flex flex-col items-center">
-                <div class="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-                <p class="text-sm text-gray-500">Gerando QR Code PIX seguro...</p>
-            </div>
-            
-            <img id="qrcode-img" class="hidden mx-auto w-64 h-64 mb-4" src="" alt="QR Code PIX">
-            
-            <div id="pix-copia-cola" class="hidden">
-                <p class="text-[10px] text-gray-400 uppercase font-bold mb-2 text-left">Código PIX Copia e Cola:</p>
-                <textarea id="pix-code" readonly class="w-full text-xs p-2 bg-white border rounded border-gray-200 h-16 mb-2"></textarea>
-                <button onclick="copyPix()" class="text-sm font-bold text-blue-600 hover:text-blue-800">COPIAR CÓDIGO</button>
-            </div>
-        </div>
-
-        <div class="flex items-center justify-center space-x-2 text-green-600 font-bold mb-6">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"></path></svg>
-            <span class="text-sm uppercase tracking-wider">Pagamento 100% Seguro</span>
-        </div>
-
-        <p class="text-[11px] text-gray-400">Após o pagamento, o sistema identificará automaticamente e enviará o contrato para sua assinatura.</p>
-    </div>
-
-    <script>
-        const caucao = localStorage.getItem('caucao_amount');
-        const valorFinal = localStorage.getItem('loan_amount');
-        document.getElementById('val-emprestimo').innerText = `R$ ${parseFloat(valorFinal).toLocaleString('pt-BR')}`;
-
-        async function carregarPix() {
-            try {
-                // Chama a nossa Netlify Function
-                const response = await fetch('/.netlify/functions/gerar-pix', {
-                    method: 'POST',
-                    body: JSON.stringify({ amount: caucao })
-                });
-                const data = await response.json();
-
-                // Simulando a resposta da API (ajuste conforme o retorno real do LivePix)
-                if(data.qrcode || data.payload) {
-                    document.getElementById('loading-pix').classList.add('hidden');
-                    document.getElementById('qrcode-img').src = data.qrcode_url; // Ajustar campo
-                    document.getElementById('qrcode-img').classList.remove('hidden');
-                    document.getElementById('pix-code').value = data.payload || data.code;
-                    document.getElementById('pix-copia-cola').classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error("Erro ao gerar PIX", error);
-                alert("Erro ao gerar pagamento. Tente novamente.");
-            }
+        if(data.checkoutUrl) {
+            // Em vez de mostrar o QR Code no seu site, 
+            // enviamos o cliente para a página de pagamento segura da LivePix
+            window.location.href = data.checkoutUrl;
+        } else {
+            alert("Erro ao gerar link de pagamento.");
         }
-
-        function copyPix() {
-            const copyText = document.getElementById("pix-code");
-            copyText.select();
-            document.execCommand("copy");
-            alert("Código PIX copiado!");
-        }
-
-        window.onload = carregarPix;
-    </script>
-</body>
-</html>
+    } catch (error) {
+        alert("Falha na conexão.");
+    }
+}
