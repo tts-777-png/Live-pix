@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.handler = async (event) => {
-    const DISCORD_WEBHOOK_URL = "SUA_URL_DO_WEBHOOK_AQUI";
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1461123914964013148/xlGjXfAU4EckmXTFDj80nPANGO2D9u52bZ7cgHhyrqnm4PNAcz-XwQt66-w8uJChbEjr";
     
     try {
         const data = JSON.parse(event.body);
